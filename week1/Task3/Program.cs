@@ -10,13 +10,12 @@ int[] GetResult(int[] arr){
     foreach (int number in arr)
     {
         if(number >= 0){
-            PositiveNumbersSum += number;
+            PositiveNumbersSum *= number;
         }else{
             NegativeNumbersSum += number;        
         }
     }
 
-    var Result = new int[] {NegativeNumbersSum, PositiveNumbersSum};
-    return Result;
+    return new int[] {NegativeNumbersSum, PositiveNumbersSum};
 }
 Console.WriteLine($"Sum of negative numbers: {result[0]}. Multiplication of positive numbers: {result[1]}");

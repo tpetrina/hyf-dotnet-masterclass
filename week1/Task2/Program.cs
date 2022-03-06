@@ -1,20 +1,16 @@
 ﻿string input = "Intellectualization";
 string inputToLowerCase = input.ToLower();
 
-string Vowels= "aeiou";
-char[] VowelsArray = Vowels.ToCharArray();
+string vowels= "aeiou";
 
 int GetVowelCount(string inputToLowerCase){
-    int VowelsCount = 0;
+    int vowelsCount = 0;
 
     foreach (char letter in inputToLowerCase)
     {
-        foreach (char vowel in VowelsArray)
-        {
-            if (letter == vowel) VowelsCount++;
-        }
+        if (vowels.Contains(letter)) vowelsCount++;
     }
-    return VowelsCount;
+    return vowelsCount;
 }
 
 int vowelCount = GetVowelCount(inputToLowerCase);

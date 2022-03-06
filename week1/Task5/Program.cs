@@ -31,8 +31,7 @@ return result;
 void WriteResult(int[] result){
     for (int i = 0; i < result.Length; i++)
     {
-        Console.Write(result[i]);
-        Console.Write(" ");
+        Console.WriteLine(string.Join(",", result[i]));
     }
 }
 
