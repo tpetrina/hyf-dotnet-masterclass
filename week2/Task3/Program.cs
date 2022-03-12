@@ -1,9 +1,13 @@
 ﻿// 3. Adding time
+// 4. Adding minutes
 
 var time = new JupiterTime(2, 20);
 var timeIn1Hour = time.AddHours(1);
+var time1 = new JupiterTime(1, 21);
+var timeIn20Minutes = time1.AddMinutes(20);
 
 PrintTime(timeIn1Hour);
+PrintTime(timeIn20Minutes);
 
 void PrintTime(string time)
 {
@@ -22,9 +26,12 @@ public class JupiterTime
             Minutes = minutes % 60;
         }
     }
-
     public string AddHours(int hour){
          Hours +=hour;
+         return ($"{Hours}:{Minutes}");
+    }
+    public string AddMinutes(int minute){
+         Minutes +=minute;
          return ($"{Hours}:{Minutes}");
     }
 }
