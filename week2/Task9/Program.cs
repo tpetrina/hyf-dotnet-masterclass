@@ -21,12 +21,12 @@ public abstract class AlienTime
 
     public override string ToString()
     {
-        var NumberOfDays=HoursInDay/171;
+        var numberOfDays=HoursInDay/171;
         if(Minutes>59){
             Hours += Minutes/60;
             Minutes = Minutes % 60;
         }
-        return "Time: " + Hours + ":" + Minutes + " NumberOfDays: " + NumberOfDays;
+        return "Time: " + Hours + ":" + Minutes + " NumberOfDays: " + numberOfDays;
     }
 
 }

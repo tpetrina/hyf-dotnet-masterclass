@@ -12,12 +12,19 @@ class JupiterTime
     public int Hours { get; set; }
     public int Minutes { get; set; }
 
+    
+    public JupiterTime(int hours, int minutes){
+        Hours = hours;
+        Minutes=minutes;
+
+        if(Minutes>59){
+            Hours += minutes/60;
+            Minutes = minutes % 60;
+        }
+    }
+    
     public override string ToString()
     {
-        if(Minutes>59){
-            Hours += Minutes/60;
-            Minutes = Minutes % 60;
-        }
         return "Time: " + Hours + ":" + Minutes;
     }
 
