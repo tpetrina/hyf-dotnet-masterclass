@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddSingleton<IMealRepository, Mealrepository>();
+builder.Services.AddSingleton<IMealRepository, MealRepository>();
 builder.Services.AddSingleton<IReservationRepository, ReservationRepository>();
 builder.Services.AddSingleton<IReviewRepository, ReviewRepository>();
 
