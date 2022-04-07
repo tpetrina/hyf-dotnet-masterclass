@@ -34,4 +34,10 @@ public class ReservationRepository : IReservationRepository
         var mealReservations = await connection.QueryAsync<Reservation>("SELECT id, meal_id as MealID, created_date as CreatedDate, contact_phonenumber as ContactNumber, contact_name as Name, contact_email as Email, number_of_guests as NumberOfGuests FROM reservations WHERE meal_id=@CustomId", new { CustomId = id });
         return mealReservations.ToList();
     }
+
+    public async Task DeleteReservation(int id)
+    {
+        await using var connection = new MySqlConnection(Shared.ConnectionString);
+        await connection.ExecuteAsync(@"DELETE FROM reservations WHERE Id = @Id", new { Id = id });
+    }
 }

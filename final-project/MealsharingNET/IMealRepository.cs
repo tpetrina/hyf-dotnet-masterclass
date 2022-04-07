@@ -9,4 +9,5 @@ public interface IMealRepository
     Task Add(Meal m);
 
     Task<Meal> GetMeal(int id);
+    Task DeleteMeal(int id);
 }
