@@ -4,7 +4,7 @@ using MealsharingNET.Models;
 namespace MealsharingNET.Controllers;
 
 [ApiController]
-[Route("Reviews")]
+[Route("api/reviews")]
 public class ReviewController : ControllerBase
 {
     private IReviewRepository _repo;
@@ -14,19 +14,19 @@ public class ReviewController : ControllerBase
         _repo = repo;
     }
 
-    [HttpGet("List")]
+    [HttpGet("")]
     public async Task<List<Review>> ListAllReviews()
     {
         return await _repo.ListReviews();
     }
     
-    [HttpPost("Add")]
+    [HttpPost("")]
     public async Task AddReview([FromBody] Review review)
     {
         await _repo.Add(review);
     }
 
-    [HttpGet("GetMealReviews")]
+    [HttpGet("{id}")]
     public async Task<List<Review>> MealReviews(int id)
     {
         return await _repo.MealReviews(id);

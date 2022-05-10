@@ -14,6 +14,12 @@ public class MealRepository : IMealRepository
         var mealID = await connection.ExecuteAsync("INSERT INTO meals (Title, Description, Price, Location, Max_Reservations) VALUES (@Title, @Description, @Price, @Location, @MaxReservations)", m);
     }
 
+    public async Task DeleteMeal(int id)
+    {
+        await using var connection = new MySqlConnection(Shared.ConnectionString);
+        await connection.ExecuteAsync("DELETE FROM Meals WHERE id=@CustomId", new { CustomId = id });
+    }
+
     public async Task<Meal> GetMeal(int id)
     {
         await using var connection = new MySqlConnection(Shared.ConnectionString);
