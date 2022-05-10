@@ -16,10 +16,10 @@ public class MealController : ControllerBase
 
     [HttpGet("")]
     public async Task<List<Meal>> ListAllMeals(
-        [FromServices] ILogger<MealController> logger
+        // [FromServices] ILogger<MealController> logger
     )
     {
-        logger.LogWarning(Shared.ConnectionString);
+        // logger.LogWarning(Shared.ConnectionString);
         return await _repo.ListMeals();
     }
     [HttpPost("")]
